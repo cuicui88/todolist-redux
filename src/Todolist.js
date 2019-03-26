@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 
 
 import store from './store/index.js';
-import {getInputChangeAction,getAddItemAction,getDeleteItemAction,getTodolist} from './store/actionCreator';
+import {getInputChangeAction,getAddItemAction,getDeleteItemAction,getInitList} from './store/actionCreator';
 import TodolistUI from './TodolistUI';
 class Todolist extends Component{
     constructor(props){
@@ -27,7 +27,7 @@ class Todolist extends Component{
         )
     }
     componentDidMount(){
-        const action = getTodolist();
+        const action = getInitList();
         store.dispatch(action);
     }
     handleInputChange(e){
